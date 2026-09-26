@@ -326,6 +326,12 @@ function ContractRegistryCard() {
                           <Clock size={10} />
                           {dep.deployed_at}
                         </div>
+                        <div className="text-[10px] text-slate-500 dark:text-slate-400 flex items-center justify-between gap-2">
+                          <span>{t('registryWasmHash')}</span>
+                          <code className="font-mono truncate" title={dep.wasm_hash}>
+                            {dep.wasm_hash.slice(0, 8)}…{dep.wasm_hash.slice(-6)}
+                          </code>
+                        </div>
                       </div>
                     );
                   })}
@@ -334,21 +340,6 @@ function ContractRegistryCard() {
             </div>
           );
         })}
-      </div>
-
-      <div className="pt-3 border-t border-slate-200 dark:border-slate-800 space-y-1.5">
-        {[
-          { label: t('registrySourceCanonical'), value: data.source.canonical_path },
-          { label: t('registrySourceGenerator'), value: data.source.generator_script },
-          { label: t('registrySourceDeployment'), value: data.source.deployment_registry },
-        ].map((row) => (
-          <div key={row.label} className="flex items-start justify-between gap-2 text-[11px]">
-            <span className="text-slate-500 dark:text-slate-400 shrink-0">{row.label}</span>
-            <code className="font-mono text-slate-700 dark:text-slate-300 text-right break-all">
-              {row.value}
-            </code>
-          </div>
-        ))}
       </div>
 
       <div className="flex items-center justify-end pt-1">

@@ -307,9 +307,6 @@
     "registryContractId": "Contract ID",
     "registryDeployedVersion": "Deployed Version",
     "registryDeployedAt": "Deployed Date",
-    "registrySourceCanonical": "Canonical Output File",
-    "registrySourceGenerator": "Generator Script",
-    "registrySourceDeployment": "Deployment Registry",
     "registryCopyId": "Copy Contract ID",
     "registryCopied": "Copied to clipboard",
     "registryViewSource": "View Source",
@@ -324,7 +321,8 @@
     "tabAllSteps": "All Steps",
     "sectionProgress": "Section progress",
     "autoVerified": "Auto-verified",
-    "manual": "Manual check"
+    "manual": "Manual check",
+    "registryWasmHash": "WASM Hash"
   },
   "faucet": {
     "title": "Testnet Faucet Helper",

@@ -896,6 +896,8 @@ const dashboardSummaryHandler: MockHandler = async () => {
 };
 
 const contractRegistryHandler: MockHandler = async () => {
+  // Mirrors the real output of app/onchain/scripts/generate-registry.py —
+  // the frontend contract-registry types are aligned to this exact shape.
   const registry: ContractRegistryResponse = {
     schema_version: 2,
     generated_at: new Date().toISOString(),
@@ -905,16 +907,12 @@ const contractRegistryHandler: MockHandler = async () => {
         networks: {
           testnet: {
             contract_id: 'CDSBJ27PKTNFTRW6OKPCVXDRUSSRUIQUG6DW5PUTKLDXTDT23NQIS6JG',
+            wasm_hash: '24328e15b7c11c7ff07caeaf0328da591b3b63e84af57fa03623c10126eabc8d',
             version: '0.1.0',
             deployed_at: '2026-06-03',
           },
         },
       },
-    },
-    source: {
-      canonical_path: 'app/onchain/deployments/contract-registry.json',
-      generator_script: 'app/onchain/scripts/generate-registry.py',
-      deployment_registry: 'app/onchain/deployments/registry.json',
     },
   };
 
